@@ -1,0 +1,20 @@
+{
+  "name": "simplex",
+  "version": "1.0.0",
+  "description": "Simplex",
+  "scripts": {
+    "start": "node ./build/index.js",
+    "build": "npx swc ./src/ -d build --copy-files --strip-leading-paths",
+    "build:watch": "npx swc ./src/ -w -d build --copy-files --strip-leading-paths",
+    "dev": "npx nodemon ./build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@swc/cli": "^0.7.7",
+    "@swc/core": "^1.12.1",
+    "nodemon": "^3.1.10",
+    "typescript": "^5.8.3"
+  }
+}
