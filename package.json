@@ -2,11 +2,12 @@
   "name": "simplex",
   "version": "1.0.0",
   "description": "Simplex",
+  "type": "module",
   "scripts": {
-    "start": "node ./build/index.js",
+    "start": "node ./build/main.js",
     "build": "npx swc ./src/ -d build --copy-files --strip-leading-paths",
     "build:watch": "npx swc ./src/ -w -d build --copy-files --strip-leading-paths",
-    "dev": "npx nodemon ./build"
+    "dev": "npx nodemon ./build/main.js"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +15,11 @@
   "devDependencies": {
     "@swc/cli": "^0.7.7",
     "@swc/core": "^1.12.1",
+    "@types/node": "^24.0.1",
     "nodemon": "^3.1.10",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "path-to-regexp": "^8.2.0"
   }
 }
