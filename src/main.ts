@@ -1,12 +1,12 @@
-import { App } from "./index.js";
+import { App } from "./framework/app.js";
 
 const app = new App();
 
-app.get("/health-check", () => {
+app.router.get("/health-check", () => {
   console.log("API is running!");
 });
 
-app.get("/hello-world", () => {
+app.router.get("/hello-world", () => {
   console.log("HELLO WORLD");
 });
 

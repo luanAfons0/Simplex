@@ -1,18 +1,11 @@
-import { createServer, Server } from "http";
 import { match } from "path-to-regexp";
 
-export class App {
-  private routes: Map<string, any>;
-  private server: Server;
+export class Router {
+  private routes: Map<string, Function[]> = new Map();
 
-  constructor() {
-    this.server = this.createMyServer();
-    this.routes = new Map();
-  }
-
-  private createMyServer(): Server {
-    return createServer(this.serverHandler.bind(this));
-  }
+  public getRoutes = (): Map<string, Function[]> => {
+    return this.routes;
+  };
 
   public get = (path: string, ...handlers: Function[]): void => {
     const currentHandlers = this.routes.get(`${path}/GET`) || [];
@@ -39,7 +32,7 @@ export class App {
     this.routes.set(`${path}/DELETE`, [...currentHandlers, ...handlers]);
   };
 
-  private sanitizeUrl = (url: string, method: string): string => {
+  public sanitizeUrl = (url: string, method: string): string => {
     const urlParams = url.split("/").slice(1);
 
     const [lastParam] = urlParams[urlParams.length - 1].split("?");
@@ -51,7 +44,7 @@ export class App {
     return sanitizedUrl;
   };
 
-  private matchUrl = (sanitizedUrl): boolean | string => {
+  public matchUrl = (sanitizedUrl): boolean | string => {
     let result: boolean | string = false;
 
     for (const path of this.routes.keys()) {
@@ -68,25 +61,5 @@ export class App {
     }
 
     return result;
-  };
-
-  private serverHandler = async (request, response) => {
-    const sanitizedUrl = this.sanitizeUrl(request.url, request.method);
-
-    const match = this.matchUrl(sanitizedUrl);
-
-    if (match && typeof match === "string") {
-      const middlewaresAndControllers = this.routes.get(match);
-      response.statusCode = 200;
-      response.end("Found");
-    } else {
-      response.statusCode = 404;
-      response.end("Not found");
-    }
-  };
-
-  public run = (port: string, extraFunction?: Function) => {
-    this.server.listen(port);
-    if (extraFunction) extraFunction();
   };
 }
