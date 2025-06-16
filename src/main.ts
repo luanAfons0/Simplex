@@ -2,18 +2,16 @@ import { App } from "./framework/app.js";
 
 const app = new App();
 
-app.router.get("/health-check", () => {
-  console.log("API is running!");
-});
-
 app.router.get(
-  "/hello-world",
-  (_, __, next) => {
+  "/hello-world/:id",
+  (_, __, next: Function) => {
     console.log("Example middleware here");
     next();
   },
   (req, res) => {
-    console.log("HELLO WORLD");
+    console.log(req.params);
+
+    res.status(200).json({ message: "teste" });
   }
 );
 

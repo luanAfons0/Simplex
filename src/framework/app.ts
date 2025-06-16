@@ -1,5 +1,7 @@
 import { createServer, Server, ServerResponse } from "http";
 
+import { ResponseDecorator } from "./decorators/response.js";
+import { RequestDecorator } from "./decorators/request.js";
 import { MiddlewaresChain } from "./middlewares-chain.js";
 import { Router } from "./router.js";
 
@@ -30,6 +32,8 @@ export class App {
 
       if (middlewaresAndControllers)
         await this.middlewaresChain.dispatchChain(request, response, [
+          RequestDecorator.bind(null, this.router.getRoutes().keys()),
+          ResponseDecorator,
           ...middlewaresAndControllers,
         ]);
     } else {
