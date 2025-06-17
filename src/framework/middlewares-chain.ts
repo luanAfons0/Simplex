@@ -1,8 +1,8 @@
-import { ServerResponse } from "http";
+import { IncomingMessage, ServerResponse } from "http";
 
 export class MiddlewaresChain {
   public dispatchChain = (
-    request: Request,
+    request: IncomingMessage,
     response: ServerResponse,
     middlewares: Function[]
   ): Promise<Function | undefined> => {
@@ -10,7 +10,7 @@ export class MiddlewaresChain {
   };
 
   public invokeMiddlewares = async (
-    request: Request,
+    request: IncomingMessage,
     response: ServerResponse,
     middlewares: Function[]
   ): Promise<Function | undefined> => {

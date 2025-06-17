@@ -1,6 +1,15 @@
+import { ServerResponse } from "http";
+
 import { match } from "path-to-regexp";
 
-export const RequestDecorator = (routes, request, response, next) => {
+import { NextFunction, Request } from "../types";
+
+export const RequestDecorator = (
+  routes: string[],
+  request: Request,
+  _: ServerResponse,
+  next: NextFunction
+) => {
   const getParams = () => {
     const urlParams = request.url.split("/").slice(1);
 
@@ -13,12 +22,12 @@ export const RequestDecorator = (routes, request, response, next) => {
       const urlMatch = match(path, {
         decode: decodeURIComponent,
       });
-      const url = `/${allParams}/${request.method.toUpperCase()}`;
+      const url = `/${allParams}/${(request.method ?? "GET").toUpperCase()}`;
       const found = urlMatch(url);
       if (found) {
         Object.keys(found.params).forEach((key) => {
           request.params = {
-            ...request.params,
+            ...(request.params as Object),
             [key]: found.params[key],
           };
         });

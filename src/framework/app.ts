@@ -1,4 +1,4 @@
-import { createServer, Server, ServerResponse } from "http";
+import { createServer, Server, ServerResponse, IncomingMessage } from "http";
 
 import { ResponseDecorator } from "./decorators/response.js";
 import { RequestDecorator } from "./decorators/request.js";
@@ -21,9 +21,11 @@ export class App {
   }
 
   private serverHandler = async (
-    request: Request,
+    request: IncomingMessage,
     response: ServerResponse
   ): Promise<void> => {
+    if (!request || !request.url || !request.method) return;
+
     const sanitizedUrl = this.router.sanitizeUrl(request.url, request.method);
     const match = this.router.matchUrl(sanitizedUrl);
 
