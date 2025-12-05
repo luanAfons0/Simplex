@@ -1,0 +1,23 @@
+{
+  "name": "simplex",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/framework/simplex.js",
+  "types": "./dist/framework/simplex.d.ts",
+  "files": [
+    "dist/framework"
+  ],
+  "type": "module",
+  "scripts": {
+    "dev": "npx nodemon",
+    "build": "npx tsc",
+    "start": "node dist/examples/static-files-serve/index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^24.10.1",
+    "typescript": "^5.9.3"
+  }
+}
