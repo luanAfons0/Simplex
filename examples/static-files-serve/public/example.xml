@@ -1,0 +1,22 @@
+<root>
+  <person
+  firstname="Petronia"
+  lastname="Pond"
+  city="Kandy"
+  country="Ecuador"
+  firstname2="Kelly"
+  lastname2="Fennessy"
+  email="Kelly.Fennessy@yopmail.com"
+  />
+  <random>39</random>
+  <random_float>100.658</random_float>
+  <bool>true</bool>
+  <date>1984-05-10</date>
+  <regEx>hellooooooooooooooooooooooooooo to you</regEx>
+  <enum>online</enum>
+  <elt>Ernesta</elt><elt>Flory</elt><elt>Louella</elt><elt>Julieta</elt><elt>Cassondra</elt>  
+  <Kelly>
+    <age>55</age>
+  </Kelly>
+</root>
+

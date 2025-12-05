@@ -1,0 +1,11 @@
+{
+  "watch": [
+    "framework",
+    "examples"
+  ],
+  "ext": "ts,json",
+  "ignore": [
+    "**/*.spec.ts"
+  ],
+  "exec": "tsx ./examples/static-files-serve/index.ts"
+}
