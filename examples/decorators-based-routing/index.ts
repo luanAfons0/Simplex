@@ -1,0 +1,33 @@
+import { appRoutes } from "../../framework/routing/decorators-router.js";
+import Simplex from "../../framework/simplex.js";
+
+const app = new Simplex({
+  customNotFoundTreatment: (req, res) => {
+    res.sendJson({
+      statusCode: 404,
+      data: {
+        message: "The provided route was not found",
+        route: req.path,
+      },
+    });
+  },
+  customErrorTreatment: (_, res, error) => {
+    res.sendJson({
+      statusCode: 500,
+      data: {
+        message: "An unexpected error occurred, please try again",
+        error: error.message,
+      },
+    });
+  },
+});
+
+app.autoLoad("**/**.controller.{js,ts}");
+
+app.setAppRoutes(appRoutes);
+
+app.init();
+
+app.server.listen(3000, "localhost", () => {
+  console.log("API is up and running on port 3000");
+});
