@@ -1,8 +1,11 @@
+import "reflect-metadata";
+
 import { generatePathParams, routeMatch } from "./utils/pathFormatter.js";
 import { Response } from "./http/response.js";
 import { Request } from "./http/request.js";
 import http, { Server } from "http";
-import { dirname, format, resolve } from "path";
+import { resolve } from "path";
+import { glob } from "glob";
 import fs from "fs";
 
 class Simplex {
@@ -217,6 +220,18 @@ class Simplex {
 
     return bufferData;
   };
+
+  public autoLoad(...filesPatters: Array<string>) {
+    filesPatters.forEach(async (pattern: string) => {
+      const files = await glob(pattern, {
+        ignore: "**/node_modules/**",
+      });
+
+      for (const filePath of files) {
+        import(resolve(`${process.cwd()}/${filePath}`));
+      }
+    });
+  }
 }
 
 export default Simplex;

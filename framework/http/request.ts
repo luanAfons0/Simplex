@@ -69,7 +69,7 @@ class Request {
     this.headers = formatedHeaders;
   };
 
-  private setUpPath = ():void => {
+  private setUpPath = (): void => {
     const hasParams = this.url.indexOf("?");
 
     if (hasParams != -1) {
