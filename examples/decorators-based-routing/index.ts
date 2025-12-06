@@ -22,7 +22,7 @@ const app = new Simplex({
   },
 });
 
-app.autoLoad("**/**.controller.{js,ts}");
+app.autoLoad("**/**.controller.js");
 
 app.setAppRoutes(appRoutes);
 

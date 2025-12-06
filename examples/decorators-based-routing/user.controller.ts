@@ -129,7 +129,7 @@ class UserController {
     });
   }
 
-  @Delete({routePath: "/:id"})
+  @Delete({ routePath: "/:id" })
   public DeleteUser(req: Request, res: Response) {
     const userFound = UserController.users.find(
       (user) => user.id == Number(req.pathParams.id),
