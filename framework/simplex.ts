@@ -234,4 +234,4 @@ class Simplex {
   }
 }
 
-export default Simplex;
+export { Simplex };
