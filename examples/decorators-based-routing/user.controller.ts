@@ -1,4 +1,13 @@
-import { Request, Response,Controller, Delete, Get, Patch, Post, Put } from "simplex-api";
+import {
+  Request,
+  Response,
+  Controller,
+  Delete,
+  Get,
+  Patch,
+  Post,
+  Put,
+} from "simplex-api";
 
 @Controller("/users")
 class UserController {

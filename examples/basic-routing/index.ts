@@ -1,4 +1,4 @@
-import { Request, Response ,Router, Simplex } from "simplex-api";
+import { Request, Response, Router, Simplex } from "simplex-api";
 
 const app = new Simplex({
   customNotFoundTreatment: (req, res) => {
