@@ -1,7 +1,4 @@
-import type { Response } from "../../framework/http/response.js";
-import type { Request } from "../../framework/http/request.js";
-import { Router } from "../../framework/routing/router.js";
-import Simplex from "../../framework/simplex.js";
+import { Router, Simplex, Request, Response } from "simplex-api";
 
 const app = new Simplex();
 const router = new Router();
@@ -12,7 +9,7 @@ router.get("/", (_: Request, res: Response) => {
 
 app.setAppRoutes(router.getRoutes());
 
-app.setStaticFolder("/examples/static-files-serve/public");
+app.setStaticFolder("/static-files-serve/public");
 
 app.init();
 

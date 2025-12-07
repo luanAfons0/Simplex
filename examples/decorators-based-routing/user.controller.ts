@@ -1,13 +1,4 @@
-import { Response } from "../../framework/http/response.js";
-import { Request } from "../../framework/http/request.js";
-import {
-  Controller,
-  Delete,
-  Get,
-  Patch,
-  Post,
-  Put,
-} from "../../framework/routing/decorators-router.js";
+import { Request, Response,Controller, Delete, Get, Patch, Post, Put } from "simplex-api";
 
 @Controller("/users")
 class UserController {
