@@ -1,17 +1,21 @@
 {
-  "name": "simplex",
-  "version": "1.0.0",
-  "description": "",
-  "main": "./dist/framework/simplex.js",
-  "types": "./dist/framework/simplex.d.ts",
+  "name": "simplex-api",
+  "version": "1.0.11",
+  "description": "A basic ExpressJS clone that aims to solidify the Node.js and APIs knowledge obtained",
+  "main": "./dist/simplex.js",
+  "types": "./dist/simplex.d.ts",
   "files": [
-    "dist/framework"
+    "dist"
   ],
   "type": "module",
   "scripts": {
     "build": "npx tsc"
   },
-  "keywords": [],
+  "keywords": [
+    "api",
+    "decorator",
+    "middleware"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {

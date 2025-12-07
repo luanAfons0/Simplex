@@ -44,7 +44,7 @@ and middleware handling.
 
 - Node.js version 21.7 or higher
 
-### Usage
+### Installation
 
 ```bash
 npm install simplex-api
