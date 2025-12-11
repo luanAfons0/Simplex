@@ -1,4 +1,4 @@
-import { Request, Response, Controller, Get } from "simplex-api";
+import { type Request, type Response, Controller, Get } from "simplex-api";
 
 @Controller("/")
 class HomeController {

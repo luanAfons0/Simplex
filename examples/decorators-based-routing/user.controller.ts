@@ -1,6 +1,6 @@
 import {
-  Request,
-  Response,
+  type Request,
+  type Response,
   Controller,
   Delete,
   Get,
