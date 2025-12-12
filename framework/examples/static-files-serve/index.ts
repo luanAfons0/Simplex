@@ -1,4 +1,7 @@
-import { Router, Simplex, type Request, type Response } from "simplex-api";
+import { Request } from "../../http/request.js";
+import { Response } from "../../http/response.js";
+import { Router } from "../../routing/router.js";
+import { Simplex } from "../../simplex.js";
 
 const app = new Simplex();
 const router = new Router();

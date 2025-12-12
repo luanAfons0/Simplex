@@ -1,13 +1,6 @@
-import {
-  type Request,
-  type Response,
-  Controller,
-  Delete,
-  Get,
-  Patch,
-  Post,
-  Put,
-} from "simplex-api";
+import { Response } from "../../http/response.js";
+import { Request } from "../../http/request.js";
+import { Controller, Post, Get, Delete, Patch, Put } from "../../routing/decorators-router.js";
 
 @Controller("/users")
 class UserController {

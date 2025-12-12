@@ -1,4 +1,6 @@
-import { type Request, type Response, Controller, Get } from "simplex-api";
+import { Controller, Get } from "../../routing/decorators-router.js";
+import { Response } from "../../http/response.js";
+import { Request } from "../../http/request.js";
 
 @Controller("/")
 class HomeController {
@@ -13,8 +15,8 @@ class HomeController {
   public GetHome(_: Request, res: Response) {
     res.sendHtml({
       statusCode: 200,
-      data: "<h1>Home route here</h1>"
-    })
+      data: "<h1>Home route here</h1>",
+    });
   }
 }
 

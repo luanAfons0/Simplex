@@ -1,6 +1,6 @@
 {
   "name": "simplex-api",
-  "version": "1.0.15",
+  "version": "1.1.7",
   "description": "A basic ExpressJS clone that aims to solidify the Node.js and APIs knowledge obtained",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -13,11 +13,13 @@
   },
   "keywords": [
     "api",
+    "router",
+    "sinatra",
     "decorator",
     "middleware"
   ],
-  "author": "",
-  "license": "ISC",
+  "author": "Luan Afonso",
+  "license": "MIT",
   "devDependencies": {
     "@types/node": "^24.10.1",
     "typescript": "^5.9.3"

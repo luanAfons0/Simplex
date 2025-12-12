@@ -1,4 +1,5 @@
-import { Simplex, appRoutes } from "simplex-api";
+import { appRoutes } from "../../routing/decorators-router.js";
+import { Simplex } from "../../simplex.js";
 
 const app = new Simplex({
   customNotFoundTreatment: (req, res) => {
