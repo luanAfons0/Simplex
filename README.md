@@ -1,15 +1,13 @@
 # Simplex
 
-A basic ExpressJS clone that aims to solidify the Node.js and APIs
-knowledge obtained.
+A ExpressJS like framework, that aims to use modern features and patterns to scale your API.
 
 ---
 
 ## 📌 About the Project
 
-**Simplex** is an educational NPM package inspired by ExpressJS. Its
-main goal is to help developers better understand how Node.js works
-internally, especially in the context of building APIs, routing systems,
+**Simplex** is an NPM package inspired by ExpressJS. Its
+main goal is to help developers to build APIs, routing systems,
 and middleware handling.
 
 ---
@@ -34,7 +32,7 @@ and middleware handling.
 
 - Middleware system
 - Express-like routing system
-- Route-level middleware support
+- Decorators based routing
 
 ---
 
@@ -51,7 +49,7 @@ npm install simplex-api
 ```
 
 > [!NOTE]
-> In the `examples` folder, we have a lot of examples of how to use the package, feel free to copy or do your version of the implementation.
+> In the [`examples`](https://github.com/luanAfons0/Simplex/tree/main/framework/examples) folder, we have a lot of examples of how to use the package, feel free to copy or do your version of the implementation.
 
 ---
 
