@@ -1,6 +1,6 @@
 {
   "name": "simplex-api",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "A basic ExpressJS clone that aims to solidify the Node.js and APIs knowledge obtained",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
