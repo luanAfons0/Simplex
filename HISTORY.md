@@ -1,5 +1,5 @@
 ### v1.2.0 - 12/12/2025
- * Add dependency injection
+ * Add depencency injection
  * Add dependency injection types
 
 ### v1.1.8 - 12/12/2025
